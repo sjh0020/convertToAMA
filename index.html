@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>规范AMA</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <span id="introTitle">简易生成AMA引用格式</span>
+    <div>
+        <span>作者名</span>
+        <textarea rows="1" cols="40" autocomplete="on" wrap="off" placeholder="例如：张三, San Zhang" required id="authorNames"></textarea>
+        <!-- <button id="test">test</button> -->
+    </div>
+    <div>
+        <span>标题</span>
+        <textarea rows="1" cols="40" autocomplete="on" wrap="off" placeholder="例如: 某某研究/A study of..." required id="sentenceTitle"></textarea>
+    </div>
+    <div>
+        <span>期刊名</span>
+        <textarea rows="1" cols="40" autocomplete="on" wrap="off" placeholder="例如: 某某刊物/Nature..." required id="journalTitle"></textarea>
+    </div>
+    <div>
+        <span>出版年份</span>
+        <textarea rows="1" cols="40" autocomplete="on" wrap="off" placeholder="例如: 2022" required id="publishedYear"></textarea>
+    </div>
+    <div>
+        <span>第几卷</span>
+        <textarea rows="1" cols="40" autocomplete="on" wrap="off" placeholder="例如: 20" required id="volume"></textarea>
+    </div>
+    <div>
+        <span>第几期</span>
+        <textarea rows="1" cols="40" autocomplete="on" wrap="off" placeholder="例如: 20" id="period"></textarea>
+    </div>
+    <div>
+        <span>引用的页码</span>
+        <textarea rows="1" cols="40" autocomplete="on" wrap="off" placeholder="起始页码，如: 20" required id="startPage"></textarea>
+        <span style="width: 10px;"> - </span>
+        <textarea rows="1" cols="40" autocomplete="on" wrap="off" placeholder="结束页码，如: 22" id="endPage"></textarea>
+    </div>
+    <div>
+        <span>网址</span>
+        <textarea rows="1" cols="40" autocomplete="on" wrap="off" placeholder="如: https://pubmed.ncbi.nlm.nih.gov/1/" required id="website"></textarea>
+    </div>
+    <div>
+        <button id="generate">生成</button>
+        <button id="copy" class="disable">复制</button>
+        <input id="input"></input>
+    </div>
+    <span id="result">
+        Makar AB, McMartin KE, Palese M, Tephly TR. Formate assay in body fluids: application in methanol poisoning. <i>Biochem Med</i>. 1975;13(2):117-126. doi:10.1016/0006-2944(75)90147-7
+    </span>
+</body>
+<script src="app.js"></script>
+<script src="https://unpkg.com/spacingjs" defer></script>
+</html>
