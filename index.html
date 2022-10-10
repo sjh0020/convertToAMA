@@ -46,13 +46,14 @@
     </div>
     <div>
         <button id="generate">生成</button>
-        <button id="copy" class="disable">复制</button>
-        <input id="input"></input>
+        <button id="copy" class="disable btn" data-clipboard-target="#result">复制</button>
+        <textarea id="input"></textarea>
     </div>
-    <span id="result">
-        Makar AB, McMartin KE, Palese M, Tephly TR. Formate assay in body fluids: application in methanol poisoning. <i>Biochem Med</i>. 1975;13(2):117-126. doi:10.1016/0006-2944(75)90147-7
+    <span id="resultBoder">
+        <span id="result">Makar AB, McMartin KE, Palese M, Tephly TR. Formate assay in body fluids: application in methanol poisoning. <i>Biochem Med</i>. 1975;13(2):117-126. doi:10.1016/0006-2944(75)90147-7</span>
     </span>
 </body>
 <script src="app.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.10/dist/clipboard.min.js"></script>
 <script src="https://unpkg.com/spacingjs" defer></script>
 </html>
