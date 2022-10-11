@@ -15,7 +15,7 @@ function generateAMA() {
     let btn = document.querySelector('#copy')
     btn.classList.remove("disable")
 }
-/* execCommand方法
+/* // execCommand方法
 function copyText() {
     let range = document.createRange();
     const aa = document.getElementById('result');  // 这里是你要选择复制的文本dom节点
@@ -24,8 +24,30 @@ function copyText() {
     window.getSelection().addRange(range);
     document.execCommand('copy');
     window.getSelection().removeAllRanges();
-}*/
+}
+*/
 // clipboard.write方法
+
 function copyText() {
+  try {
     navigator.clipboard.write([new ClipboardItem({'text/html': new Blob([document.getElementById('result').innerHTML,], {type: 'text/html',}),}),]);
+    const permission = navigator.permissions.query({name: 'clipboard-write'});
+    // console.log(permission.state);
+    if (permission.state === 'defined') {
+      throw new Error('Not allow to write the clipboard!');
+    }
+  }
+  catch(err) {
+    console.log(err.message);
+    let range = document.createRange();
+    const aa = document.getElementById('result');  // 这里是你要选择复制的文本dom节点
+    window.getSelection().removeAllRanges();
+    range.selectNode(aa);
+    window.getSelection().addRange(range);
+    document.execCommand('copy');
+    window.getSelection().removeAllRanges();
+  }
+  finally {
+    console.log('Copiled!');
+  }
 }
