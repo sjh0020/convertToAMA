@@ -30,12 +30,13 @@ function copyText() {
 
 function copyText() {
   try {
-    navigator.clipboard.write([new ClipboardItem({'text/html': new Blob([document.getElementById('result').innerHTML,], {type: 'text/html',}),}),]);
-    const permission = navigator.permissions.query({name: 'clipboard-write'});
-    // console.log(permission.state);
-    if (permission.state === 'defined') {
-      throw new Error('Not allow to write the clipboard!');
-    }
+    navigator.permissions.query({name: 'clipboard-write'}).then(status => {
+      console.log(status.state);
+      if (status.state === 'denied') {
+        throw new Error('Not allow to write the clipboard!');
+      } else if (status.state === "granted") {
+          navigator.clipboard.write([new ClipboardItem({'text/html': new Blob([document.getElementById('result').innerHTML,], {type: 'text/html',}),}),]);
+        }});
   }
   catch(err) {
     console.log(err.message);
