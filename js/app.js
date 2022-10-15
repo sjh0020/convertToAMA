@@ -8,6 +8,7 @@
 //     authorNames = authorNames.replaceAll("  ", " ");
 //     // alert(authorNames);
 // }
+import { pinyin } from ('pinyin-pro');
 document.querySelector('#generate').onclick = generateAMA;
 document.querySelector('#copy').onclick = copyText;
 
