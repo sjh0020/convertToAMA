@@ -8,7 +8,8 @@
 //     authorNames = authorNames.replaceAll("  ", " ");
 //     // alert(authorNames);
 // }
-import { pinyin } from ('pinyin-pro');
+import { pinyin } from './pinyinProESM.js';
+console.log(pinyin('你好', {toneType: 'none'}));
 document.querySelector('#generate').onclick = generateAMA;
 document.querySelector('#copy').onclick = copyText;
 
